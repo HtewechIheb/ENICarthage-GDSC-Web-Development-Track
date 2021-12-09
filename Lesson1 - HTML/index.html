@@ -1,0 +1,392 @@
+<!DOCTYPE html> 
+    <!-- The DOCTYPE declarations signals to the browser which markup standard we're using -->
+    <!-- Examples:
+        <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">: XHTML
+        <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">: HTML 4.01
+        <!DOCTYPE html>: HTML 5
+    -->
+<html lang="en"> <!-- <html> is the tag that contains all our HTML -->
+<head> <!-- <head> tag contains information about the HTML document (non visible) -->
+    <meta charset="UTF-8"> <!-- <meta> tag contains meta information about the HTML document -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML</title> <!-- <title> tag defines the document title (tab title in the browser) -->
+</head>
+<body>
+    <!-- <body> tag contains all the visual content -->
+
+    <!-- Headings (Titles) -->
+    <h1>Heading Level 1</h1>
+    <h2>Heading Level 2</h2>
+    <h3>Heading Level 3</h3>
+    <h4>Heading Level 4</h4>
+    <h5>Heading Level 5</h5>
+    <h6>Heading Level 6</h6>
+
+    <!-- Paragraphs -->
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem cum iste nisi similique aliquid ipsum nostrum, 
+        possimus obcaecati dicta ut ratione deserunt voluptate, totam neque velit doloremque perspiciatis molestiae, 
+        itaque quo maiores sed facere repellat? Rem molestias dolores vitae nam sed eveniet ad iusto quam voluptatibus. 
+        Minus ratione enim consequatur.
+    </p>
+        <!-- Lorem Ipsum is slang for random text in web development, you can visit the official site here to copy random text: https://www.lipsum.com/ -->
+        <!-- Fortunately, VS Code offers build in Lorem Ipsum generation so you don't have to use the website -->
+        <!-- Just type "lorem" and press TAB or type "lorem" followed by the number of words you need (ex: lorem50) and press TAB -->
+
+    <!-- Links -->
+    <a href="https://www.google.com">Link to Google</a>
+        <!-- Here we are using the attribute "href" of the <a> tag -->
+        <!-- The purpose of attributes is to add some information needed by the tag, in this case for example the URL that the link
+            will redirect to -->
+    <a href="https://www.facebook.com">Link to Facebook</a>
+    <a href="https://www.youtube.com">Link to Youtube</a>
+
+    <!-- Text Tags -->
+    <p>
+        Lorem ipsum dolor <strong>sit amet consectetur adipisicing</strong> elit. Dolorem cum iste nisi similique aliquid ipsum nostrum,
+        possimus obcaecati dicta ut ratione deserunt voluptate, totam neque velit doloremque perspiciatis molestiae,
+        itaque <em>quo maiores sed facere repellat?</em> Rem molestias dolores vitae nam sed eveniet ad iusto quam voluptatibus.
+        Minus ratione enim consequatur.
+    </p>
+    <p>
+        Mathematical fact: 4<sup>2</sup> = 16
+        <br>
+        Physics face: H<sub>2</sub>O is the molecule of water
+        <br>
+        Name of our club: <abbr title="Google Developer Student Club">GDSC</abbr>
+    </p>
+        <!-- <strong> sets the text to bold -->
+        <!-- <em> sets the text to italic -->
+        <!-- <sub> sets the text as a subscript -->
+        <!-- <sup> sets the text as a superscript -->
+        <!-- <abbr> sets an abbreviation (When you hover over it, it will show the full name) -->
+
+    <!-- Miscellaneous Tags -->
+    <hr> <!-- <hr> Add a horizontal line -->
+    <br> <!-- <br> Jump to a new line -->
+
+    <!-- Lists -->
+    <ol>
+        <li>This is an item</li>
+        <li>This is an item</li>
+        <li>This is an item</li>
+        <li>This is an item</li>
+        <li>This is an item</li>
+        <li>This is an item</li>
+    </ol>
+        <!-- <ol> Ordered List, ordered lists display their items ordered (numbered)-->
+
+    <ul>
+        <li>This is an item</li>
+        <li>This is an item</li>
+        <li>This is an item</li>
+        <li>This is an item</li>
+        <li>This is an item</li>
+        <li>This is an item</li>
+    </ul>
+        <!-- <ul> Unordered List, unordered lists display their items unordered (bullet points)-->
+
+    <hr>
+    <br>
+
+    <!-- Tables -->
+    <!-- 5x4 Table -->
+    <table border="1"> <!-- <table> define a table and the border attribute sets the width of the table lines (by default, they are invisible) -->
+        <tr> <!-- <tr> define a table row -->
+            <th>Name</th> <!-- <th> define a table header cell (the text is bold and centered) -->
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td>Mohamed</td> <!-- <td> define a table data cell -->
+            <td>mohamed@gmail.com</td>
+            <td>24153987</td>
+            <td>24</td>
+        </tr>
+        <tr>
+            <td>Karim</td>
+            <td>karim@outlook.com</td>
+            <td>97153624</td>
+            <td>26</td>
+        </tr>
+        <tr>
+            <td>Walid</td>
+            <td>walid@yahoo.com</td>
+            <td>23756152</td>
+            <td>28</td>
+        </tr>
+        <tr>
+            <td>Raouf</td>
+            <td>raouf@gmail.com</td>
+            <td>54877112</td>
+            <td>21</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <!-- 3x3 Table -->
+    <table border="1">
+        <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+        </tr>
+        <tr>
+            <td>Bsissa</td>
+            <td>2.9 TND</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td rowspan="2">Chocolate</td> <!-- The "rowspan" attribute indicates that the cell is going to take the space of 2 cells vertically -->
+            <td>4 TND</td> 
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>6 TND</td> 
+            <td>17</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <!-- Unbalanced Table -->
+    <table border="1">
+        <tr>
+            <th>Product</th>
+            <th>Lowest Price</th>
+            <th>Average Price</th>
+            <th>Highest Price</th>
+        </tr>
+        <tr>
+            <td>Product A</td>
+            <td>5 TND</td>
+            <td>10 TND</td>
+            <td>15 TND</td>
+        </tr>
+        <tr>
+            <td>Product B</td>
+            <td colspan="3">50 TND</td> <!-- The "colspan" attribute indicates that the cell is going to take the space of 2 cells horizontally -->
+        </tr>
+        <tr>
+            <td>Product B</td>
+            <td colspan="2">50 TND</td>
+            <td colspan="2">100 TND</td>
+        </tr>
+    </table>
+
+    <hr>
+    <br>
+
+    <!-- Forms -->
+    <form> <!-- <form>: defines a form -->
+        <label for="name">Name:</label>
+            <!-- <label> is used to define the title of the input -->
+            <!-- If the "for" attribute on a label is set to the id of an input, clicking on the label will put the focus on the input -->
+        <input type="text" id="name" placeholder="Enter your name">
+            <!-- the <input> tag is used to define a form field (there are many types) -->
+            <!-- The "placeholder" attribute defines placeholder text for the input -->
+
+        <br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" placeholder="Enter your password" required>
+            <!-- If the "required" attribute is added to an input, the form won't submit unless that input in filled in -->
+
+        <br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="xyz@gmail.com" required>
+
+        <br><br>
+
+        <label for="cin">CIN:</label>
+        <input type="number" id="cin" placeholder="Enter your CIN" value="000000">
+            <!-- The "value" attribute defines a default value for the input -->
+
+        <br><br>
+
+        <label for="birthdate">Birthdate:</label>
+        <input type="date" id="birthdate">
+
+        <br><br>
+
+        <label for="phone">Phone:</label>
+        <input type="number" id="phone" placeholder="Enter your phone number">
+
+        <br><br>
+
+        <label for="phone">Second Phone:</label>
+        <input type="number" id="phone" disabled>
+            <!-- If the "disabled" attribute is added to an input, it can't be modified -->
+
+        <br><br>
+
+        <label for="photo">Photo:</label>
+        <input type="file" id="photo">
+
+        <br><br>
+
+        <span>Gender:</span>
+        <input type="radio" id="male" name="gender" checked>
+        <label for="male">Male</label>
+        <input type="radio" id="male" name="gender">
+        <label for="male">Female</label>
+            <!-- A radio input can be checked by default with the "checked" attribute -->
+            <!-- radio input is used for single choice options. -->
+            <!-- NOTE: THE RADIO INPUTS THAT ARE GROUPED TOGETHER MUST HAVE THE SAME "name" ATTRIBUTE VALUE TO GUARANTEE THAT A SINGLE OPTION IS SELECTED -->
+
+        <br><br>
+    
+        <span>Hobbies:</span>
+        <input type="checkbox" id="powerlifting" name="hobby">
+        <label for="powerlifting">Powerlifting</label>
+        <input type="checkbox" id="running" name="hobby">
+        <label for="running">Running</label>
+        <input type="checkbox" id="gaming" name="hobby">
+        <label for="gaming">Gaming</label>
+        <input type="checkbox" id="reading" name="hobby">
+        <label for="reading">Reading</label>
+            <!-- checkbox input is used for multiple choice options. NOTE: THE CHECKBOX INPUTS THAT ARE GROUPED TOGETHER MUST HAVE THE SAME NAME AS WELL -->
+    
+        <br><br>
+
+        <label for="country">Country:</label>
+        <select id="country"> <!-- <select> defines a dropdown list of options -->
+            <option>Russia</option> <!-- each option is defined inside an <option> tag -->
+            <option>England</option>
+            <option>USA</option>
+            <option>France</option>
+            <option>KSA</option>
+            <option>Dubai</option>
+            <option>Algeria</option> <!-- The option with the "selected" attribute is the one selected by default -->
+            <option selected>Tunisia</option>
+            <option>Egypt</option>
+            <option>Iceland</option>
+            <option>China</option>
+            <option>Japan</option>
+            <option>Canada</option>
+            <option>Palestine</option>
+        </select>
+
+        <br><br>
+
+        <label for="profession">Profession:</label>
+        <select id="profession" multiple size="3"> 
+            <!-- The "multiple" attribute allows multiple options to be selected (By default, only one can be selected) -->
+            <!-- The "size" attribute defines how many options are visible at a time -->
+            <option>Student</option>
+            <option>Teacher</option>
+            <option>Doctor</option>
+            <option>Carpenter</option>
+            <option>Software Engineer</option>
+            <option>Secretary</option>
+            <option>Bus Driver</option>
+        </select>
+
+        <br><br>
+
+        <label for="comments">Comments:</label>
+        <textarea id="comments" cols="50" rows="10" name="comments"></textarea>
+            <!-- <textarea> defines a LARGE text input -->
+            <!-- NOTE: IT IS NOT A SELF CLOSING TAG LIKE <input> -->
+            <!-- "cols" attribute defines the number of columns of the textarea -->
+            <!-- "rows" attribute defines the number of rows of the textarea -->
+        
+        <br><br>
+
+        <input type="submit" value="Send"> 
+            <!-- input of type "submit" is a button that will submit the form -->
+            <!-- The "value" attribute with an input of type "submit" sets the text of the button -->
+        <input type="reset" value="Reset"> 
+            <!-- input of type "reset" is a button that will submit the form -->
+
+        <button type="submit">Send</button> 
+            <!-- Alternative for <input type="submit"> -->
+            <!-- Here the button text is set inside the <button> tag -->
+        <button type="reset">Reset</button> 
+            <!-- Alternative for <input type="reset"> -->
+    </form>
+
+    <hr>
+    <br>
+
+    <!-- Multimedia Tags -->
+    <!-- Images -->
+    <img src="nature.png" alt="A mountain image" width="200"> 
+        <!-- The "src" attribute is used to specify the image file, it can be a file on your PC or a URL to a file online -->
+        <!-- The "alt" attribute is used to define alternative text that is displayed if the image can't be displayed -->
+        <!-- The "width" attribute is used to define the image width (will be replaced by CSS later) -->
+        <!-- Here the image is in the same folder as the HTML file -->
+    <img src="assets/gdsc-enicarthage.jpg" alt="GDSC is the best" width="200">
+        <!-- Here the image is in assets folder which is in the same folder as the HTML file --> 
+    <img src="https://upload.wikimedia.org/wikipedia/en/9/9a/Trollface_non-free.png" alt="Hehehe" width="200">
+        <!-- Here the image is online and we specify the URL --> 
+
+    <br>
+
+    <!-- Videos -->
+    <video src="assets/final-brain-cell.mp4" controls></video>
+        <!-- The "controls" attribute must be set for the controls to show (play button, playback speed, etc...) -->
+
+    <br>
+
+    <!-- Audio -->
+    <audio src="assets/metallica-unforgiven.mp3" controls></audio>
+
+    <br><br>
+
+    <hr>
+    <br>
+
+    <!-- Buttons -->
+    <button>Press Me</button>
+
+    <hr>
+    <br>
+
+    <!-- Containers -->
+    <!-- 
+        Containers are used to group elements, generally for styling purposes. 
+        Think of Youtube's header for an example, it is a container that has:
+            - Youtube's logo
+            - Search input
+            - Notifications button
+            - Sidemenu button
+            - etc...
+    -->
+    <div> <!-- <div> is a block level container -->
+        <p>
+            This is a paragraph with a <span>button inside a</span> container. <!-- <span> is an inline container (used generally for text) -->
+            This is a paragraph with a button inside a container.
+            This is a paragraph with a button inside a container.
+            This is a paragraph with a button inside a container.
+            This is a paragraph with a button inside a container.
+        </p>
+        <button>Press Me</button>
+    </div>
+
+    <hr>
+    <br>
+
+    <!-- HTML 5 Semantic Tags -->
+    <!-- 
+        Containers are used ALOT in HTML, and we'll see that during our workshops.
+        Before HTML 5 came around, developers delt with what was called "Div Hell".
+        They called it that because their HTML markup was full of <div> tags and it was hard to understand.
+        So HTML 5 introduced new container tags that are more SEMANTIC than <div> tags.
+        They server the same purpose as the <div> tag but they are more meaningful (semantic) to the developer reading it and
+        the browser analyzing it.
+        TIP: ALWAYS USE SEMANTIC TAGS WHEN IT MAKES SENSE TO USE THEM (Ex: header, footer, sidebar, etc...).
+        --> 
+    <header>Header content here</header> <!-- Generally used for headers -->
+    <footer>Footer content here</footer> <!-- Generally used for footers -->
+    <main>Main content here</main> <!-- Generally used for main content -->
+    <nav>Navigation content here</nav> <!-- Generally used for navigation sections -->
+    <aside>Sidebar content here</aside> <!-- Generally used for sidebars -->
+    <section>Section content here</section> <!-- Generally used for page sections -->
+    <article>Article content here</article> <!-- Generally used for articles -->
+</body>
+</html>
