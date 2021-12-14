@@ -1,0 +1,9 @@
+landing: rgba(4, 9, 30, 0.8)
+header/footer: #02385E
+header/footer border: #0197F6
+button: #FB6107
+boxes: rgba(86, 187, 255, 0.1)
+form input border: #aaaaaa
+form input outline: #2eafff
+form button: #0197f6
+form button hover: #2eafff

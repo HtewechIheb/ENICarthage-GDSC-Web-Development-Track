@@ -1,0 +1,247 @@
+/* General */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+ul {
+    padding: 0;
+}
+
+/* Landing */
+.landing {
+    height: 100vh;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.8), rgba(4, 9, 30, 0.8)), url("assets/gdsc-enicarthage.jpg");
+    background-position: top center;
+    background-size: cover;
+}
+
+/* Header */
+.header {
+    color: #ffffff;
+    background-color: #02385e;
+    border-bottom: 3px solid #0197f6;
+}
+
+.header .flex {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.branding img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.branding h1 {
+    display: inline-block;
+}
+
+.navigation {
+    margin-top: 12px;
+}
+
+.navigation li {
+    display: inline-block;
+    list-style: none;
+    padding: 0;
+    margin-right: 10px;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.navigation li a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.navigation li a:hover {
+    color: #0197f6;
+    cursor: pointer;
+}
+
+/* Showcase */
+.showcase {
+    text-align: center;
+    color: #ffffff;
+    padding-top: 190px;
+}
+
+.showcase h1 {
+    font-size: 48px;
+    margin: 0;
+}
+
+.showcase p {
+    font-size: 20px;
+}
+
+.showcase .button {
+    display: inline-block;
+    padding: 15px 30px;
+    margin-top: 10px;
+    border-radius: 5px;
+    color: #fb6107;
+    border: 1px solid #fb6107;
+    background-color: transparent;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.showcase .button:hover {
+    color: #ffffff;
+    background-color: #fb6107;
+    cursor: pointer;
+}
+
+/* Services */
+#services {
+    padding-top: 20px;
+}
+
+#services h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    color: #02385e;
+}
+
+#services .flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#services .box {
+    text-align: center;
+    width: 33%;
+    padding: 15px 20px;
+    margin-bottom: 5px;
+    background-color: rgba(86, 187, 255, 0.1);
+    border-radius: 10px;
+}
+
+#services .box img {
+    height: 75px;
+}
+
+/* Contact Us */
+#contact {
+    padding-top: 20px;
+    margin-bottom: 60px;
+}
+
+#contact h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    color: #02385e;
+}
+
+#contact .input-group {
+    margin-bottom: 10px;
+}
+
+#contact .input-group input,
+#contact .input-group textarea {
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+    border-radius: 5px;
+}
+
+#contact .input-group textarea {
+    resize: none;
+}
+
+#contact .input-group input:focus,
+#contact .input-group textarea:focus {
+    outline: 1px solid #2eafff;
+}
+
+#contact .button-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#contact button {
+    background: #0197f6;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 5px;
+    width: 100px;
+}
+
+#contact button:hover {
+    background: #2eafff;
+    cursor: pointer;
+}
+
+/* footer */
+.footer {
+    color: #ffffff;
+    background-color: #02385e;
+    border-top: 3px solid #0197f6;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .container {
+        width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .branding {
+        text-align: center;
+        width: 100%;
+    }
+
+    .navigation {
+        text-align: center;
+        width: 100%;
+    }
+
+    .showcase {
+        padding-top: 100px;
+    }
+
+    .showcase h1 {
+        font-size: 40px;
+    }
+
+    .showcase p {
+        font-size: 18px;
+    }
+
+    #services .box {
+        width: 45%;
+    }
+}
+
+@media (max-width: 576px) {
+    #services .box {
+        width: 100%;
+    }
+}
