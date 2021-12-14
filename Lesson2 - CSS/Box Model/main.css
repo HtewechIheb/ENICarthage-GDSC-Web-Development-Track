@@ -1,0 +1,175 @@
+/*
+    Each element in HTML has a box model composed of:
+    - The content 
+    - The border
+    - The padding
+    - The margin
+*/
+
+/* Border */
+/*
+    This is a border that goes around the content
+*/
+#borderContainer .box1 {
+    border: 2px solid orangered;
+    /* 
+        To style a border, 3 things must be set: [width] [style] [color] 
+        Each one of the those things can be styled on its own as well
+    */
+}
+
+#borderContainer .box2 {
+    border-width: 5px;
+    border-style: dashed;
+    border-color: purple;
+    /* Same as border: 5px dashed purple */
+}
+
+#borderContainer .box3 {
+    border-top: 15px solid #9C0500;
+    border-bottom: 5px dashed #2FC401;
+    border-right: 1px double #039CD8;
+    border-left: 20px dotted #F58ACD;
+    /* Each side of a border can be styled independently */
+}
+
+#borderContainer .box4 {
+    border-top-width: 2px;
+    border-top-style: solid;
+    border-top-color: #2A009C;
+    /* Same as border-top: 2px solid #2A009C */
+
+    border-bottom-width: 5px;
+    border-bottom-style: solid;
+    border-bottom-color: #00AA80;
+    /* Same as border-bottom: 5px solid #2A009C */
+
+    border-right-width: 8px;
+    border-right-style: solid;
+    border-right-color: #9C079C;
+    /* Same as border-right: 8px solid #9C079C */
+
+    border-left-width: 12px;
+    border-left-style: solid;
+    border-left-color: #0300AA;
+    /* Same as border-left: 12px solid #0300AA */
+}
+
+/* Padding */
+/*
+    This is the specing between the content and the border
+*/
+#paddingContainer .box1 {
+    border: 2px solid #2A009C;
+    padding: 20px;
+    /* The padding on all sides is set to 20px */
+}
+
+#paddingContainer .box2 {
+    border: 2px solid #2A009C;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    padding-left: 40px;
+    /* Same as border, each side can be set independently */
+    /* 
+        Instead of writing each side on its own, there's a shorthand syntax:
+        padding: [top] [right] [bottom] [left]
+        So the above is equivalent to padding: 20px 10px 5px 40px
+    */
+}
+
+/* Margin */
+/*
+    This is the spacing between the border and other elements in the page
+*/
+
+/* Multiple selectors can be specified for a style and they're seperated by commas */
+#marginContainer .box1,
+#marginContainer .box2,
+#marginContainer .box3,
+#marginContainer .box4 {
+    border: 2px solid #2A009C;
+}
+
+#marginContainer .box1 {
+    margin: 20px;
+    /* The padding on all sides is set to 20px */
+}
+
+#marginContainer .box2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 50px;
+    margin-left: 50px;
+    /* Same as border, each side can be set independently */
+    /* 
+        Instead of writing each side on its own, there's a shorthand syntax:
+        margin: [top] [right] [bottom] [left]
+        So the above is equivalent to margin: 20px 5px 20px 5px
+    */
+}
+
+#marginContainer .box2,
+#marginContainer .box3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Content */
+/*
+    This is the content of the tag itself that is seen if no border, padding or margin are set
+    The width and height of the content can be manipulated using CSS
+*/
+#contentContainer .box1,
+#contentContainer .box2,
+#contentContainer .box3,
+#contentContainer .box4 {
+    border: 2px solid #2A009C;
+    margin: 10px;
+    padding: 10px;
+}
+
+#contentContainer .box1 {
+    width: 800px;
+    height: 550px;
+    /* Here, the width and height of the element are fixed to set values */
+}
+
+#contentContainer .box2 {
+    width: 80%;
+    /* 
+        width/height can be set by percentages instead of pixels and the percentage is 
+        relative to the width/height of the parent element.
+
+        If width/height are set with pixels, they are fixed.
+        If width/height are set with percentages, they are responsive to changes in parent width/height (ex: screen resize)
+    */
+}
+
+#contentContainer .box3 {
+    max-height: 100px;
+    /* 
+        When a max height is set, the element's height can't exceed that value.
+        If the element's height exceeds the value, the element's height is set the max height and the rest of
+        the content (after the max height) overflows
+    */
+    /* Same for max-width */
+}
+
+#contentContainer .box4 {
+    min-height: 200px;
+    /* 
+        When a min height is set, the element's height can't be lower than that value.
+        If it is lower than that value, the element's height is set to the min height
+    */
+    /* Same for min-width */
+}
+
+#contentContainer .box5 {
+    display: block;
+}
+
+#contentContainer .box5 .text1 {
+    display: inline;
+}

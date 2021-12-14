@@ -1,0 +1,73 @@
+.box {
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid #4522FF;
+    height: 200px;
+}
+
+#backgroundColorContainer .color-container {
+    background-color: #7755FF;
+    /*
+        The background-color property sets the color of the background
+    */
+}
+
+#backgroundImageContainer .image-container {
+    background-image: url("nature.png");
+    /*
+        The background-image property sets an image as the background.
+        If the background image is smaller than the container, it is repeated horizontally and vertically untill
+        it fills the container.
+    */
+}
+
+#backgroundRepeatContainer .image-container {
+    background-image: url("nature.png");
+    background-repeat: no-repeat;
+    /* 
+        The background-repeat property allows us to either:
+        - background-repeat: no-repeat => Disable background repeating
+        - background-repeat: repeat-x => Repeat only horizontally
+        - background-repeat: repeat-y => Repeat only vertically
+    */
+}
+
+#backgroundPositionContainer .image-container {
+    background-image: url("nature.png");
+    background-repeat: no-repeat;
+    background-position: top right;
+    /* 
+        The background position property allows us to specify where the image is drawn:
+        - backgound-position: [top / center / bottom] [left / center / right]
+    */
+}
+
+#backgroundSizeContainer .image-container:nth-of-type(1) {
+    background-image: url("nature.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    /* 
+        The background-size property allows us to set the size of the background image:
+        - background-size: cover (resizes the image to cover the entire container)
+    */
+}
+
+#backgroundSizeContainer .image-container:nth-of-type(2) {
+    background-image: url("gdsc-enicarthage.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    /* 
+        The background-size property allows us to set the size of the background image:
+        - background-size: contain (resizes the image so that it is contained inside the container) 
+    */
+}
+
+#backgroundContainer .image-container {
+    background: red url("gdsc-enicarthage.jpg") center center/contain no-repeat;
+    /* 
+        The background property is a shorthand syntax that groups all previous properties:
+        - background: [background-color] [background-image] [background-position]/[background-size] [background-repeat]    
+    */
+}

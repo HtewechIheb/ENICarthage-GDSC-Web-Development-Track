@@ -1,0 +1,193 @@
+/* color */
+/*
+    This property is used to change the color of text
+*/
+#colorContainer .class1 {
+    color: blue; /* Color is specified using its name */
+}
+
+#colorContainer .class2 {
+    color: #00FF00; /* Color is specified using its HEX value #rrggbb (#000000 - #ffffff) */
+}
+
+#colorContainer .class3 {
+    color: rgb(87, 119, 0); /* Color is specified using rgb(0-255, 0-255, 0-255) */
+}
+
+#colorContainer .class4 {
+    color: rgba(211, 113, 1, 0.5); /* Color is specified using rgba(0-255, 0-255, 0-255, 0-1), the "a" part sets the opacity */
+}
+
+/* font-size */
+/*
+    This property is used to change the size of text
+*/
+#fontSizeContainer .class1 {
+    font-size: 10px;
+}
+
+#fontSizeContainer .class2 {
+    font-size: 20px;
+}
+
+#fontSizeContainer .class3 {
+    font-size: 30px;
+}
+
+#fontSizeContainer .class4 {
+    font-size: 40px;
+}
+
+/* font-family */
+/*
+    This property is used to change the font of text
+    When several font names are specified, it means if the first font fails to load, it will fall back to the other fonts
+*/
+#fontFamilyContainer .class1 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#fontFamilyContainer .class2 {
+    font-family: 'Times New Roman';
+}
+
+#fontFamilyContainer .class3 {
+    font-family: 'Trebuchet MS';
+}
+
+#fontFamilyContainer .class4 {
+    font-family: Georgia, 'Times New Roman';
+}
+
+/* font-weight */
+/*
+    This property is used to specify the weight of text (bold or light)
+*/
+#fontWeightContainer .class1 {
+    font-weight: lighter;
+}
+
+#fontWeightContainer .class2 {
+    font-weight: bold;
+}
+
+#fontWeightContainer .class3 {
+    font-weight: 100;
+}
+
+#fontWeightContainer .class4 {
+    font-weight: 400;
+}
+
+#fontWeightContainer .class5 {
+    font-weight: 700;
+}
+
+#fontWeightContainer .class6 {
+    font-weight: 900;
+}
+
+/* font-style */
+/*
+    This property is used to specify the style of text (italic)
+*/
+#fontStyleContainer .class1 {
+    font-style: italic;
+}
+
+/* text-align */
+/*
+    This property is used to specify alignment of text
+*/
+#textAlignContainer .class1 {
+    text-align: left;
+}
+
+#textAlignContainer .class2 {
+    text-align: right;
+}
+
+#textAlignContainer .class3 {
+    text-align: center;
+}
+
+/* text-transform */
+/*
+    This property is used to specify whether text is uppercase, lowercase or capitalized
+*/
+#textTransformContainer .class1 {
+    text-transform: lowercase;
+}
+
+#textTransformContainer .class2 {
+    text-transform: uppercase;
+}
+
+#textTransformContainer .class3 {
+    text-transform: capitalize; /* */
+}
+
+/* text-decoration */
+/*
+    This property is used to specify the decoration of text.
+    You can specify the decoration type and optionally a color.
+*/
+#textDecorationContainer .class1 {
+    text-decoration: underline;
+}
+
+#textDecorationContainer .class2 {
+    text-decoration: line-through;
+}
+
+#textDecorationContainer .class3 {
+    text-decoration: overline;
+}
+
+/* line-height */
+/*
+    This property is used to specify the height of each line of text
+*/
+#lineHeightContainer .class1 {
+    line-height: 10px;
+}
+
+#lineHeightContainer .class2 {
+    line-height: 25px;
+}
+
+#lineHeightContainer .class3 {
+    line-height: 50px;
+}
+
+/* word-spacing */
+/*
+    This property is used to specify the spacing between each word of text
+*/
+#wordSpacingContainer .class1 {
+    word-spacing: 10px;
+}
+
+#wordSpacingContainer .class2 {
+    word-spacing: 25px;
+}
+
+#wordSpacingContainer .class3 {
+    word-spacing: 50px;
+}
+
+/* letter-spacing */
+/*
+    This property is used to specify the spacing between each letter of a word of text
+*/
+#letterSpacingContainer .class1 {
+    letter-spacing: 5px;
+}
+
+#letterSpacingContainer .class2 {
+    letter-spacing: 10px;
+}
+
+#letterSpacingContainer .class3 {
+    letter-spacing: 15px;
+}

@@ -1,0 +1,29 @@
+.container {
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid #4522FF;
+}
+
+.container img {
+    height: 100px;
+}
+
+/* 
+    Media Queries allow us to set a style for certain screen sizes only, which means the style is only applied
+    if the screen size bounds are met.
+    A min-width and max-width can be set at the same time, or just one of the two.
+*/
+@media (min-width: 576px) and (max-width: 768px){
+    .container {
+        text-align: center;
+        color: #FF0000;
+    }
+
+    .container h2 {
+        font-size: 16px;
+    }
+    
+    .container p {
+        font-size: 12px;
+    }
+}

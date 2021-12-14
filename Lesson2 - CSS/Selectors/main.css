@@ -1,0 +1,50 @@
+/* Element selector */
+/*
+    When writing style using a tag name selector, that style is applied to all instances of that tag
+*/
+p {
+    color: royalblue;
+}
+
+/* Class selector */
+/*
+    Syntax: Class name prefixed with .
+    Classes are used to style a bunch of elements.
+    When writing style using a class selector, that style is applied to all elements that have that class
+*/
+.pClass {
+    color: crimson;
+}
+
+/* Id selectors */
+/*
+    Syntax: Id prefixed with #
+    IDs should be unique to a single element in the document.
+    IDs are used to style a single element at a time.
+    When writing style using an ID selector, that style is applied to the element that has that ID.
+*/
+#pId {
+    color: orange;
+}
+
+/*
+    [parentSelector] [childSelector]: Select an element that is the child of another element
+ */
+#myContainer p {
+    color: black;
+    font-size: 20px;
+}
+
+/* Attribute selectors */
+/*
+    Syntax: tag[attribute="value"]
+    Elements can be selected by their attribute values
+    These selectors are mostly used to style <input> elements
+*/
+input[type="text"] {
+    background-color: gold;
+}
+
+input[type="password"] {
+    background-color: springgreen;
+}

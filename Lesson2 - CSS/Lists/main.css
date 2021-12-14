@@ -1,0 +1,11 @@
+.list1 {
+    list-style: upper-roman;
+}
+
+.list2 {
+    list-style: square;
+}
+
+.list3, .list4 {
+    list-style: none;
+}

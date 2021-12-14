@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CSS</title>
+    <link rel="stylesheet" href="main.css">
+        <!-- <link> is used to link external style sheets -->
+        <!-- "rel" attribute indicates that the linked file is a stylesheet -->
+    <style>
+        h5 {
+            color: blue;
+        }
+    </style>
+        <!-- Styling can be done internally using the <style> tag inside <head> -->
+</head>
+<body>
+    <h1>Embedding Methods:</h1>
+    <h4 style="color: red;">This CSS is applied inline</h4>
+        <!-- Here, no selectors are needed because the styling is applied directly on the element -->
+    <h5>This CSS is applied internally using the &lt;style&gt; tag inside &lt;head&gt;</h5>
+        <!-- 
+            Here the "<" and ">" are written using the special character notation to avoid them 
+            being interpreted as parts of a tag 
+        -->
+    <h6>This CSS is applied from an external file</h6>
+</body>
+</html>

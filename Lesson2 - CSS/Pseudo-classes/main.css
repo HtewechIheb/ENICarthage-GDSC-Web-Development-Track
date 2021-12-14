@@ -1,0 +1,33 @@
+#stateContainer .button {
+    display: block;
+    margin-bottom: 5px;
+    color: #FFFFFF;
+    background-color: #0000CD;
+}
+
+/* 
+    Each element in HTML has states such as: 
+    - hover: when the mouse cursor hovers over it
+    - active: when the mouse is clicking on it
+*/
+#stateContainer .button:hover {
+    background-color: #FF0000;
+    cursor: pointer;
+    /* cursor property changes the look of the mouse cursor */
+}
+
+#stateContainer .button:active {
+    background-color: #00FF00;
+}
+
+/* The nth-child pseudo selector selects the elements only if it's the nth element inside the parent */
+/* For example here we select <ol> that is inside an element with id orderContainer ONLY IF ITS THE 3rd ELEMENT OF ITS PARENT */ 
+#orderContainer ol:nth-child(1) {
+    background-color: aqua;
+}
+
+/* The nth-of-type pseudo selector selects the elements only if it's the nth element of its type inside the parent */
+/* For example here we select <ul> that is inside an element with id orderContainer ONLY IF ITS THE 2nd <ul> OF ITS PARENT */ 
+#orderContainer ul:nth-of-type(1) {
+    background-color: gold;
+}
