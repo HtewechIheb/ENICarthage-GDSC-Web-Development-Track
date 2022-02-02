@@ -1,0 +1,24 @@
+/*********** General Styling ***********/
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #dddddd;
+}
+
+.mainTitle {
+    font-size: 32px;
+    text-align: center;
+}
+
+.box {
+    background-color: #7353ba;
+    margin-bottom: 20px;
+    border: 5px solid #9568cc;
+    min-height: 100px;
+}
+
+.box .innerBox {
+    border: 1px solid #9568cc;
+    background-color: #faa6ff;
+    padding: 10px;
+}

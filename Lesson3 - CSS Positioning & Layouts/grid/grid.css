@@ -1,0 +1,294 @@
+/*********** Grid ***********/
+/*
+    CSS Grid is a very rich and complex feature that allows the creation of two dimensional page layouts without much hassle.
+    Gone are the days when you had to use a CSS framework such as Bootstrap to abstract away all the complexity of creating
+    a layout using tables or floats. 
+    To enable Grid inside a container, add this property: 
+        - "display: grid;"
+    Below we will explore the most important Grid properties and how to use them.
+*/
+
+/*
+    First of all, a grid template must be defined. A grid template is the definition of rows and columns and their sizes.
+    Each item of the grid will be placed in a cell and new rows will be created if the number of items is higher than the number of columns.
+
+    grid-template-columns:
+    This property defines the grid columns and the width of each one. Let's see what units can be used to define a column width:
+        - Pixels:
+            Try adding this: "grid-template-columns: 200px 150px 200px 50px;", here we define 4 columns, the first one is 200px, the second one is 150px,
+            the third one is 200px and the forth one is 50px.
+        - Percentages:
+            Try adding this: "grid-template-columns: 25% 50% 25%;", here we define 3 columns, the first one takes up 25% of the container width, the second 50% and the third one 25%.
+        - Fraction Units: 
+            What if we want to define 6 columns all with the same width and want them to be responsive to screen size changes ? We can definitely use percentages but who the hell wants 
+            to do the math for that.. We can instead use fraction units (fr).
+            
+            Try adding this: "grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;", the container width will be divided to 6 EQUAL fractions and each column will occupy a fraction.
+            Now change the browser width and notice how the grid is responsive.
+            
+            Now try changing the last column's width to "4fr" and notice what happens: the columns with higher fraction units will take up more of the width. You can think of the container as a pie
+            and the fraction units as pieces of the pie, 1fr equals one piece of the pie and 4fr equals 4 pieces of the pie.
+        - Auto:
+            New let's say we want 3 columns, the first and last column take up 100px each and the middle column takes up the rest of the width ? we can use the "auto" unit. 
+            Try adding this: "grid-template-columns: 100px auto 100px;". The "auto" unit will set the column width automatically depending on the free space left.
+            Now change the browser width and notice how the second column's width changes as the container width changes.
+        - Minmax Function:
+            We can use the minmax(min, max) function to specify a range for the column width. The width will vary in this range depending on how much free space is left in the container.
+
+    There are a number of utility functions we can use to help us setup the columns template:
+        - Repeat Function:
+            The repeat(number, width) function comes in handy when there are consecutive columns with the same width, for example "grid-template-columns: 75px 75px 75px 75px 200px;" can be 
+            reduced to "grid-template-columns: repeat(4, 75px) 200px;". The first argument is the number of repititions and the second one is the width. Try out this example.
+            
+            Instead of setting the number of columns, we can specify a width and let the repeat function decide how many columns to add depending on the container width using the 
+            "auto-fit" keyword instead of a number. For example: "grid-template-columns: repeat(auto-fit, 100px);", here the repeat function will determine how many 100px columns the container
+            can hold. Try out this example.
+*/
+#gridTemplateColumns .box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+
+
+
+
+
+/*
+    grid-template-rows:
+    This property defines the grid rows and the height of each one. In the following example, we define 2 columns and now we will define the rows.
+    Let's see what units can be used to define a row height:
+        - Pixels:
+            Same as columns. Try adding this: "grid-template-rows: 100px 50px 200px 50px;".
+        - Percentages:
+            Same as columns: Try adding this: "grid-template-rows: 25% 50% 12.5% 12.5%;".
+        - Fraction Units: 
+            Same as columns. Try adding this: "grid-template-rows: repeat(4, 1fr);".
+        - Auto:
+            Same as columns. Try adding this: "grid-template-rows: 50px auto 50px 50px;".
+        - Minmax Function:
+            Same as columns. Try adding this: "grid-template-rows: repeat(4, minmax(50px, 150px));".
+            Now change the height of the box and notice how the rows vary between 50px and 150px.
+    The repeat function can be used to define rows as well.
+*/
+#gridTemplateRows .box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    height: 300px;
+}
+
+
+
+
+
+
+/* 
+    grid-auto-rows:
+    Check the output of the following grid in the browser and notice how rows are created even though we didn't set up a row template.
+    This is because Grid automatically creates rows as it needs to even if they are not set in a template, these rows are called implicit rows.
+
+    We can set the height of implicit rows using the grid-auto-rows property using the same units we used in grid-template-rows.
+    Try adding this: "grid-auto-rows: 100px;", now every newly created implicit row will have a height of 100px;
+    Now try changing grid-auto-rows in the following template using percentage, fraction units, auto and minmax.
+*/
+#gridAutoRows .box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 200px;
+}
+
+
+
+
+
+
+/*
+    grid-gap:
+    This property is used to set the width of the gap between the items of the grid.
+    Try adding "grid-gap: 30px;" and notice the difference.
+*/
+#gridGap .box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 100px);
+    grid-gap: 30px;
+}
+
+
+
+
+
+
+/*
+    We learned above how to setup our grid, specifically the rows, columns and gap. 
+    By default, the container will place each item inside one grid cell starting from left to right following the order in HTML.
+    We can instead place an item in a specific location in the grid using the following properties:
+
+        - grid-column-start: sets the vertical line from which the item starts.
+        - grid-column-end: sets the vertical line at which the item ends.
+        - grid-row-start: sets the horizontal line from which the item starts.
+        - grid-row-end: sets the horizontal line at which the item ends.
+
+    In the following example, we have a 4 columns grid.
+*/
+#gridItemPosition .box {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+/* 
+    Here we select one of the grid items and use the properties we metioned above.
+    In this case the item will start at horziontal line 2 and end at horizontal line 5 and start at vertical line 1 and end at vertical line 4.
+    Play around with the values and see where the item is placed each time.
+*/
+#gridItemPosition .box .innerBox:nth-child(1) {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 5;
+}
+/* Now try placing these items */
+#gridItemPosition .box .innerBox:nth-child(2) {
+}
+
+#gridItemPosition .box .innerBox:nth-child(3) {
+}
+
+#gridItemPosition .box .innerBox:nth-child(4) {
+}
+
+
+
+
+
+/*
+    grid-template-areas / grid-area:
+    Instead of placing items using grid-column-start / grid-column-end / grid-row-start / grid-row-end, we can use grid-area.
+    The premise is very easy and intuitive, we set a letter or word for each cell of the grid. 
+    In the following example we create a 4 columns and 3 rows grid, we model the grid using 1 letter for each cell.
+    We assign the letter 'h' to the 4 cells of the first row, the letter 'm' to the first cell of the second row, the letter 
+    'c' to the rest of the cells in the second row and the letter 'f' to the 4 cells of the last row.
+*/
+#gridArea .box {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 50px auto 50px;
+    height: 300px;
+    grid-template-areas:
+        "h h h h"
+        "m c c c"
+        "f f f f";
+}
+/* Now we assign those areas to items using grid-area: */
+#gridArea .box .header {
+    grid-area: h;
+}
+
+#gridArea .box .menu {
+    grid-area: m;
+}
+
+#gridArea .box .content {
+    grid-area: c;
+}
+
+#gridArea .box .footer {
+    grid-area: f;
+}
+
+
+
+
+
+
+/*
+    justify-content / align-content:
+    Sometimes the grid can be smaller than the container itself, like the following example where we have a container that has 
+    a width of 400px and a height of 300px and the grid inside it has 3 columns of 100px and 2 rows of 100px. So the grid itself
+    has a width of 300px and height of 200px and it's smaller than the container.
+    When we're in such a case, the grid position can be adjusted horiontally using justify-content and vertically using align-content.
+    justify-content:
+        - "justify-content: start;" => grid is placed at the start horizontally (This is the one set by default).
+        - "justify-content: end;" => grid is placed at the end horizontally.
+        - "justify-content: center;" => grid is placed at the center horizontally.
+        - "justify-content: space-between;" => all horizontal free space is distributed between columns.
+        - "justify-content: space-around;" => all horizontal free space is distributed around columns.
+        - "justify-content: space-around;" => all horizontal free space is distributed evenly around columns.
+    align-content:
+        - "align-content: start;" => grid is placed at the start vertically (This is the one set by default).
+        - "align-content: end;" => grid is placed at the end vertically.
+        - "align-content: center;" => grid is placed at the center vertically.
+        - "align-content: space-between;" => all vertical free space is distributed between rows.
+        - "align-content: space-around;" => all vertical free space is distributed around rows.
+        - "align-content: space-around;" => all vertical free space is distributed evenly around rows.
+*/
+#positioningContent .box {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(2, 100px);
+    width: 400px;
+    height: 300px;
+    justify-content: center;
+    align-content: center;
+}
+
+
+
+
+
+
+/* 
+    justify-items / align-items:
+    These properties are very similiar to the preceding ones, but they serve to adjust the position of an item inside its cell.
+    The items positions can be adjusted horizontally using justify-items and vertically using align-items.
+    - justify-items:
+        - "justify-items: start;" => items are placed at the start of the cell horizontally.
+        - "justify-items: end;" => items are placed at the end of the cell horizontally.
+        - "justify-items: center;" => items are placed at the center of the cell horizontally.
+        - "justify-items: stretch;" => items are stretched along the cell horizontally (This is the one set by default).
+    - align-items:
+        - "align-items: start;" => items are placed at the start of the cell vertically.
+        - "align-items: end;" => items are placed at the end of the cell vertically.
+        - "align-items: center;" => items are placed at the center of the cell vertically.
+        - "align-items: stretch;" => items are stretched along the cell vertically (This is the one set by default).
+    In the following example, We are reducing the width and height of each item in the grid to have some free space that allows us 
+    to play around with the position.
+*/
+#positioningItems .box {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(2, 100px);
+    width: 400px;
+    height: 300px;
+    justify-items: center;
+    align-items: center;
+}
+
+#positioningItems .box .innerBox {
+    width: 50%;
+    height: 50%;
+}
+
+
+
+
+
+
+/*
+    justify-self / align-self:
+    These properties are the same as justify-items and align-items but instead of adjusting all items, this property serves to adjust a single one.
+*/
+#positioningSelf .box {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(2, 100px);
+    width: 400px;
+    height: 300px;
+}
+/* Here we will adjust the last item only */
+#positioningSelf .box .innerBox:last-child {
+    width: 50%;
+    height: 50%;
+    justify-self: center;
+    align-self: center;
+}

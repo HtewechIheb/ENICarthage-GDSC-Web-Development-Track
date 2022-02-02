@@ -1,0 +1,428 @@
+/*********** Flexbox ***********/
+/*
+    Long before Flexbox came around, the dilemma of many web developers was "How the hell do I center the content inside a div ???".
+    Flexbox is a CSS feature that allows us to organize the items inside a container (Yes, that includes centering content inside a div xD).
+    To enable Flexbox inside a container, add this property: 
+        - "display: flex;"
+    Below we will explore the most important Flexbox properties and how to use them.
+*/
+
+/*
+    flex-direction:
+    After enabling Flexbox inside a container, we must set a direction for the items:
+        - "flex-direction: row;" => items are placed horizontally from left to right (This is the one set by default).
+        - "flex-direction: column;" => items are placed vertically from top to bottom.
+        - "flex-direction: row-reverse;" => items are placed horizontally from right to left.
+        - "flex-direction: column-reverse;" => items are placed horizontally from bottom to top.
+
+    Note: notice how inside a Flexbox, block level items behave differently (particularily in row directions), you will learn why later.
+*/
+#flexDirection .box:nth-of-type(1) {
+    display: flex;
+    flex-direction: row; /* Try the other values */
+}
+
+
+
+
+
+
+/*
+    For each of the following demonstrations, we will have a row direction example and column direction example.
+*/
+
+/*
+    justify-content / align-items:
+    To understand justify-content and align-items, we must first learn about the main axis and the cross axis (axe principale et axe transversal).
+    Each flex direction has a main axis and a cross axis:
+        - "flex-direction: row;" => the main axis is a horizontal axis going from left to right, the cross axis is a vertical axis.
+        - "flex-direction: column;" => the main axis is a vertical axis going from top to bottom, the cross axis is a horizontal axis.
+        - "flex-direction: row-reverse;" => the main axis is a horizontal axis going from right to left, the cross axis is a vertical axis.
+        - "flex-direction: column-reverse;" => the main axis is a vertical axis going from bottom to top, the cross axis is a horizontal axis.
+    Items inside a Flexbox are placed on the main axis.
+*/
+
+/*
+    justify-content:
+    This property allows us to organize items on the main axis:
+        - "justify-content: start;" => items are placed at the start of the main axis (This is the one set by default).
+        - "justify-content: end;" => items are placed at the end of the main axis.
+        - "justify-content: center;" => items are placed at the center of the main axis.
+        - "justify-content: space-between;" => all free space on the main axis is distributed between items.
+        - "justify-content: space-around;" => all free space on the main axis is distributed around items.
+        - "justify-content: space-around;" => all free space on the main axis is distributed evenly around items.
+*/
+#justifyContent .box:nth-of-type(1) {
+    display: flex;
+    flex-direction: row;
+    justify-content: start; /* Try the other values */
+}
+
+#justifyContent .box:nth-of-type(2) {
+    display: flex;
+    flex-direction: column;
+    justify-content: start; /* Try the other values */
+    height: 200px;
+}
+/*
+    align-items:
+    This property allows us to organize items on the cross axis:
+        - "align-items: start;" => items are placed at the start of the cross axis.
+        - "align-items: end;" => items are placed at the end of the cross axis.
+        - "align-items: center;" => items are placed at the center of the cross axis.
+        - "align-items: stretch;" => items are stretched along the cross axis (This is the one set by default).
+*/
+#alignItems .box:nth-of-type(1) {
+    display: flex;
+    flex-direction: row;
+    align-items: start; /* Try the other values */
+}
+
+#alignItems .box:nth-of-type(2) {
+    display: flex;
+    flex-direction: column;
+    align-items: start; /* Try the other values */
+}
+
+
+
+
+
+
+/*
+    align-self: (used on a flex item, not on the container)
+    This property is the exact same as align-items but instead of organizing all items, this property serves to organize a single one.
+*/
+#alignSelf .box:nth-of-type(1) {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+}
+
+#alignSelf .box:nth-of-type(1) .innerBox:nth-of-type(2) {
+    align-self: stretch;
+}
+
+#alignSelf .box:nth-of-type(2) {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+#alignSelf .box:nth-of-type(2) .innerBox:nth-of-type(2) {
+    align-self: stretch;
+}
+
+
+
+
+
+
+/*
+    flex-wrap:
+    By default, Flexbox will try to squeeze all items into one row (row direction) or column (column direction) even if we set a particular width (row direction) 
+    or height (column direction) it will ignore it, to change this and allow Flexbox to create a new row when there is no space left, we use flex-wrap:
+        - "flex-wrap: no-wrap;" => All items are squeezed into one row (row direction) or column (column direction) (This one is set by default).
+        - "flex-wrap: wrap;" => Create new rows (row direction) or columns (column direction) when there is no space left.
+    Let's test different use cases below:
+*/
+/* 
+    Here we use a row direction and set the container width to 500px.
+    Inside the container, there are 6 boxes and the width of each is 200px. The container has no space for all of them so it shrinks them.
+*/
+#flexWrap .box:nth-of-type(1) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; /* Change this to "flex-wrap: wrap;" and see what happens, now the container creates a new row when there's no more space */
+    width: 500px;
+}
+
+#flexWrap .box:nth-of-type(1) .innerBox {
+    width: 200px;
+}
+/* 
+    Here we use a column direction and set the container height to 500px.
+    Inside the container, there are 6 boxes and the height of each is 200px. The container has no space for all of them so it shrinks them.
+*/
+#flexWrap .box:nth-of-type(2) {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap; /* Change this to "flex-wrap: wrap;", now the container creates a new column when there's no more space */
+    height: 300px;
+}
+
+#flexWrap .box:nth-of-type(2) .innerBox {
+    height: 100px;
+}
+
+
+
+
+
+
+
+/*
+    align-content:
+    When flex wrapping is enabled and there are multiple rows (row direction) or columns (column direction), we can organize the rows (row direction) or columns (column direction) using align-content:
+        - "align-content: start;" => rows/columns are placed at the start of the cross axis (This is the one set by default).
+        - "align-content: end;" => rows/columns are placed at the end of the cross axis.
+        - "align-content: center;" => rows/columns are placed at the center of the cross axis.
+        - "align-content: space-between;" => all free space on the cross axis is distributed between rows/columns.
+        - "align-content: space-around;" => all free space on the cross axis is distributed around rows/columns.
+        - "align-content: space-around;" => all free space on the cross axis is distributed evenly around rows/columns.
+
+    You might ask what's the difference between this and align-items ?
+        - align-items => organizes the ITEMS of each row (row direction) or column (column direction) on the cross axis.
+        - align-content => organizes the rows (row direction) or columns (column direction) THEMSELVES on the cross axis, not their items.
+    Check below for examples to understand:
+*/
+
+/* 
+    Here we use a row direction and set the container width to 500px and enable flex wrapping.
+    Inside the container, there are 6 boxes and the width of each is 200px. When the container has no space left it creates another row.
+    We set the height to 300px so we have some space left on the cross axis and we can use align-content.
+*/
+#alignContent .box:nth-of-type(1) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 500px;
+    height: 300px;
+    align-content: space-between; /* Try the other values */
+}
+
+#alignContent .box:nth-of-type(1) .innerBox {
+    width: 200px;
+}
+/* 
+    Here we use a column direction and set the container height to 500px and enable flex wrapping.
+    Inside the container, there are 6 boxes and the height of each is 200px. When the container has no space left it creates another column.
+    We set the width to 600px so we have some space left on the cross axis and we can use align-content.
+*/
+#alignContent .box:nth-of-type(2) {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 500px;
+    width: 600px;
+    align-content: space-between; /* Try the other values */
+}
+
+#alignContent .box:nth-of-type(2) .innerBox {
+    height: 200px;
+}
+
+
+
+
+
+
+
+/*
+    flex-basis: (used on a flex item, not on the container)
+    This property is used to specify the initial width of flex items for row direction and the intital height of flex items for column direction.
+*/
+#flexBasis .box:nth-of-type(1) {
+    display: flex;
+    flex-direction: row;
+}
+
+#flexBasis .box:nth-of-type(1) .innerBox {
+    flex-basis: 20px; /* Play around with the value */
+}
+
+#flexBasis .box:nth-of-type(2) {
+    display: flex;
+    flex-direction: column;
+}
+
+#flexBasis .box:nth-of-type(2) .innerBox {
+    flex-basis: 50px; /* Play around with the value */
+}
+
+
+
+
+
+
+/*
+    flex-grow: (used on a flex item, not on the container)
+    This property is used to specify if an item inside a Flexbox should grow when there is empty space left on the main axis.
+*/
+#flexGrow .box:nth-of-type(1) {
+    display: flex;
+    flex-direction: row;
+}
+
+#flexGrow .box:nth-of-type(1) .innerBox {
+    flex-basis: 20px; /* The flex basis is too small, check the items and notice how they grow to fill the container */
+    flex-grow: 1;
+}
+
+#flexGrow .box:nth-of-type(2) {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+}
+
+#flexGrow .box:nth-of-type(2) .innerBox {
+    flex-basis: 20px; /* The flex basis is too small, check the items and notice how they grow to fill the container */
+    flex-grow: 1;
+}
+/* 
+    Here the flex-grow value is different for each flex item, resize the screen and see how the flex items with a higher value
+    grow at a much faster rate.
+*/
+#flexGrow .box:nth-of-type(3) {
+    display: flex;
+    flex-direction: row;
+}
+
+#flexGrow .box:nth-of-type(3) .innerBox:nth-child(1) {
+    flex-basis: 20px;
+    flex-grow: 1;
+}
+
+#flexGrow .box:nth-of-type(3) .innerBox:nth-child(2) {
+    flex-basis: 20px;
+    flex-grow: 4;
+}
+
+#flexGrow .box:nth-of-type(3) .innerBox:nth-child(3) {
+    flex-basis: 20px;
+    flex-grow: 8;
+}
+/* The same applies for column direction but instead of resizing the screen, play around with the height value */
+#flexGrow .box:nth-of-type(4) {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+}
+
+#flexGrow .box:nth-of-type(4) .innerBox:nth-child(1) {
+    flex-basis: 20px;
+    flex-grow: 1;
+}
+
+#flexGrow .box:nth-of-type(4) .innerBox:nth-child(2) {
+    flex-basis: 20px;
+    flex-grow: 4;
+}
+
+#flexGrow .box:nth-of-type(4) .innerBox:nth-child(3) {
+    flex-basis: 20px;
+    flex-grow: 8;
+}
+
+
+
+
+
+
+/*
+    flex-shrink: (used on a flex item, not on the container)
+    This property is used to specify if an item inside a Flexbox should shrink when the space on the main axis is too small.
+*/
+#flexShrink .box:nth-of-type(1) {
+    display: flex;
+    flex-direction: row;
+}
+
+#flexShrink .box:nth-of-type(1) .innerBox {
+    flex-basis: 2000px; /* The flex basis is absurdly large ! check the items and notice how they shrink to fit into the container */
+    flex-shrink: 1;
+}
+
+#flexShrink .box:nth-of-type(2) {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+}
+
+#flexShrink .box:nth-of-type(2) .innerBox {
+    flex-basis: 2000px; /* The flex basis is absurdly large ! check the items and notice how they shrink to fit into the container */
+    flex-shrink: 1;
+}
+/* 
+    Here the flex-shrink value is different for each flex item, resize the screen and see how the flex items with a higher value
+    shrink at a much faster rate.
+*/
+#flexShrink .box:nth-of-type(3) {
+    display: flex;
+    flex-direction: row;
+}
+
+#flexShrink .box:nth-of-type(3) .innerBox:nth-child(1) {
+    flex-basis: 1000px;
+    flex-shrink: 1;
+}
+
+#flexShrink .box:nth-of-type(3) .innerBox:nth-child(2) {
+    flex-basis: 1000px;
+    flex-shrink: 2;
+}
+
+#flexShrink .box:nth-of-type(3) .innerBox:nth-child(3) {
+    flex-basis: 1000px;
+    flex-shrink: 3;
+}
+/* The same applies for column direction but instead of resizing the screen, play around with the height value */
+#flexShrink .box:nth-of-type(4) {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+}
+
+#flexShrink .box:nth-of-type(4) .innerBox:nth-child(1) {
+    flex-basis: 200px;
+    flex-shrink: 1;
+}
+
+#flexShrink .box:nth-of-type(4) .innerBox:nth-child(2) {
+    flex-basis: 200px;
+    flex-shrink: 2;
+}
+
+#flexShrink .box:nth-of-type(4) .innerBox:nth-child(3) {
+    flex-basis: 200px;
+    flex-shrink: 3;
+}
+
+
+
+
+
+
+/* 
+    There is a shorthand for flex-grow, flex-shrink and flex-basis:
+        - "flex: <flex_grow_value> <flex_shrink_value> <flex_basis_value>;"
+    For example:
+        - "flex-grow: 1; flex-shrink: 2; flex-basis: 250px;" = "flex: 1 2 250px;"
+*/
+
+
+
+
+
+
+/*
+    order: (used on a flex item, not on the container)
+    The order of the flex items inside a Flexbox can be changed with the order property, the items with lower values appear first.
+    In the following example, we reverse the order of the flex items using the order property.
+*/
+
+#order .box {
+    display: flex;
+}
+
+#order .box .innerBox:nth-child(1) {
+    order: 3;
+}
+
+#order .box .innerBox:nth-child(2) {
+    order: 2;
+}
+
+#order .box .innerBox:nth-child(3) {
+    order: 1;
+}

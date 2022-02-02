@@ -1,0 +1,32 @@
+/*********** General Styling ***********/
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #dddddd;
+    height: 2000px;
+}
+
+.main-title {
+    font-size: 32px;
+    text-align: center;
+}
+
+.box {
+    border: 5px solid #137ccc;
+    background-color: #0e6ba8;
+    padding: 15px;
+}
+
+.box .inner-box {
+    border: 1px solid #0e6ba8;
+    background-color: #80c4e6;
+    padding: 10px;
+}
+
+#z-index .box .inner-box:first-child {
+    background-color: #f05053;
+}
+
+#z-index .box .inner-box:last-child {
+    background-color: #e1eec3;
+}

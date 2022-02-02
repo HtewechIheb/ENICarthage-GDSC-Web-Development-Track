@@ -1,0 +1,33 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background-image: linear-gradient(to bottom, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.links {
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.link {
+    flex-basis: 25%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 32px;
+    border: 10px solid #ffffff;
+    border-radius: 10px;
+    padding: 15px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.link:hover {
+    border-color: #fc4a1a;
+    color: #fc4a1a;
+}
