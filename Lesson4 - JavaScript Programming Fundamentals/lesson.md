@@ -625,7 +625,9 @@ const person = {
 }
 ```
 
-**ES6** introduced a new syntax to declare methods inside an object:
+_**Note:** The syntax inside the brackets `{}` is called an **Object Literal** and it creates an object and assigns it to `person`._
+
+**ES6** introduced a new syntax to declare methods inside an object literal:
 
 ```JavaScript
 const person = {
@@ -687,7 +689,7 @@ To access and modify the properties of an object, we can use dot notation or bra
     person['eat'](); // --> I am eating a large pizza.
     ```
 
-Another feature that's offered by JavaScript objects is **getters** and **setters**. These are methods in the object that are accessed like properties:
+Another feature that's offered by JavaScript object literals is **getters** and **setters**. These are methods in the object that are accessed like properties:
 * **Getters:** When accessed in a reading context (we try to read their value), they are executed and their return value will be used.
 * **Setters** When accessed in a setting context (we try to set their value), they receive a *value* parameter which is the value we're trying to set and they are executed.
 
@@ -1353,7 +1355,7 @@ Some of the provided properties are:
 
 ## **Classes (ES6)**
 
-We've already learned how to create objects in JavaScript, but classes offer a more efficient way to create objects that share the same structure (blueprint).
+We've already learned how to create objects using object literals in JavaScript, but classes offer a more efficient way to create objects that share the same structure (blueprint).
 
 Suppose we are working on an internal employee management application for a company and we want to create an object for each employee:
 
@@ -1382,8 +1384,6 @@ employees.push({
     role: 'Recruiter'
 });
 ```
-
-_**Note:** Objects that we learned about earlier are called **"Object Literals"**._
 
 As you can see, creating the objects using object literals is not efficient, especially if the number of employees is large or if we need to store a lot of information about each employee, and here's where classes come in to save the day. Basically, we're going to create a blueprint for an employee and then generate objects from that blueprint:
 
@@ -1455,7 +1455,7 @@ class Employee {
 
 As we said, the `this` keyword inside the methods refers to the object instance.
 
-Objects generated from classes can be manipulated in the same way as object literals:
+Objects generated from classes can be manipulated the same way we did earlier:
 
 ```JavaScript
 const jane = new Employee('Jane', 'Doe', 'Developer');
