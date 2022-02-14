@@ -691,7 +691,7 @@ To access and modify the properties of an object, we can use dot notation or bra
 
 Another feature that's offered by JavaScript object literals is **getters** and **setters**. These are methods in the object that are accessed like properties:
 * **Getters:** When accessed in a reading context (we try to read their value), they are executed and their return value will be used.
-* **Setters** When accessed in a setting context (we try to set their value), they receive a *value* parameter which is the value we're trying to set and they are executed.
+* **Setters:** When accessed in a setting context (we try to set their value), they receive a *value* parameter which is the value we're trying to set and they are executed.
 
 ```JavaScript
 const anotherPerson = {
@@ -1091,7 +1091,7 @@ Now that we've learned about functions, loops and conditionals, let's look into 
     */
     ```
 
-* **find(function):** Executes the provided function on elements of the array and stops when it finds an element that meets a condition (it have a return value of `true`). If an element is found it is returned otherwise it returns `undefined`.
+* **.find(function) (ES6):** Executes the provided function on elements of the array and stops when it finds an element that meets a condition (it have a return value of `true`). If an element is found it is returned otherwise it returns `undefined`.
 
     ```JavaScript
     let countries = ['Tunisia', 'USA', 'Russia', 'Egypt', 'China'];
@@ -1099,7 +1099,7 @@ Now that we've learned about functions, loops and conditionals, let's look into 
     console.log(countries.find(country => country.length === 5)); // --> Egypt
     ```
 
-* **findIndex(function):** Same as `.find(function)` but instead returns the index of the element if it is found and -1 otherwise.
+* **.findIndex(function) (ES6):** Same as `.find(function)` but instead returns the index of the element if it is found and -1 otherwise.
 
     ```JavaScript
     countries = ['Tunisia', 'USA', 'Russia', 'Egypt', 'China'];
