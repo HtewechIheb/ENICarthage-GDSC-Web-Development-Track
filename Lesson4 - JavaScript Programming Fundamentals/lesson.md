@@ -111,7 +111,7 @@ myVariable = undefined;
 console.log(typeof myVariable); // --> undefined
 
 myVariable = null;
-console.log(typeof myVariable); // --> object (this is due to an error in the implementation, null is still the type)
+console.log(typeof myVariable); // --> object (it shows object but the type is still null)
 ```
 
 We declared a variable and assigned it values of different types, then we printed the result of the **`typeof`** operator which returns the type of a variable.
@@ -833,7 +833,7 @@ console.log(comment); // --> Good grade.
 ## **Primitive & Reference Values**
 Now that we've learned about variables, types, arrays, objects and functions, we're going to dive into a critical concept in JavaScript.
 
-Values of primitive types (number, string, boolean, undefined, null) are called **primitive values** and values of reference types (such as arrays and objects) are called **reference values**.
+Values of primitive types (number, string, boolean, undefined, null) are called **primitive values** and values of reference types (such as arrays, functions and objects) are called **reference values**.
 
 Whenever we assign a variable that holds a primitive value to another variable, a copy of the primitive value will be created and assigned to the variable:
 
